@@ -1,13 +1,25 @@
 # BRCA1-2_Pathogenic_Mutations
 
-Todos os datasets utilizados foram filtrados apenas por genes BRCA1 e/ou 2. Excluindo demais genes da análise !!
+Todos os datasets utilizados foram filtrados apenas por genes BRCA1 e/ou 2. Excluindo demais genes da análise !! Os datasets utilizados no presente trabalho foram todos obtidos a partir do NCBI (National Center for Biotechnology Information).
+
+**Links importantes**:
+
+- NCBI: https://www.ncbi.nlm.nih.gov/
+- Verificar sequencias FAST (DNA): https://blast.ncbi.nlm.nih.gov/Blast.cgi
 
 
 ## Datasets avaliados:
 
 **1. clinvar_brca.csv:**
 
-
+| Coluna    | Origem no VCF            | O que representa                                                                                                                                                                                                                                              | Exemplo interpretado                                              |
+|-----------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| **CHROM** | Campo fixo (1ᵃ coluna)   | Cromossomo em que a variante está, na referência **GRCh38** (o VCF da ClinVar publica duas versões, 37 e 38; você baixou a de 38).                                                                                                                           | `13` ⇒ cromossomo 13                                              |
+| **POS**   | Campo fixo (2ᵃ coluna)   | Coordenada **1-based**, posição inicial do alelo de referência (REF).                                                                                                                                                                                        | `32 314 943` ⇒ a base “A” no cromossomo 13, posição 32.314.943     |
+| **REF**   | Campo fixo (4ᵃ coluna)   | Alelo **de referência** no genoma GRCh38.                                                                                                                                                                                                                    | `A` ⇒ a base naquele local no genoma de referência                |
+| **ALT**   | Campo fixo (5ᵃ coluna)   | Alelo(s) **alternativo(s)** observados. Se houver mais de um, ficam separados por vírgulas.                                                                                                                                                                   | `G` ⇒ nucleotídeo trocado de A → G (substituição simples)         |
+| **CLNSIG**| Tag `CLNSIG` no bloco INFO| Classificação clínica atribuída pela ClinVar. Valores comuns: `Pathogenic`, `Likely_pathogenic`, `Benign`, `Likely_benign`, `Uncertain_significance`, etc.                                                                                                   | `Benign` ⇒ consenso de que **não** está associado à doença        |
+| **GENEINFO** | Tag `GENEINFO` no bloco INFO | Lista de pares `símbolo de gene:GeneID` que se sobrepõem à variante. Quando a posição cai em região compartilhada/sobreposta, aparecem vários genes separados por `\|`.                                                                                     | `BRCA2:675\|ZAR1L:646799\|LOC106721785:106721785`                 |
 
 **2. clinvar_BRCA_variant_summary.csv:**
 
