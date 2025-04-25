@@ -5,11 +5,11 @@ Todos os datasets utilizados foram filtrados apenas por genes BRCA1 e/ou 2. Excl
 
 ## Datasets avaliados:
 
-** - clinvar_brca.csv:**
+**1. clinvar_brca.csv:**
 
 
 
-**clinvar_BRCA_variant_summary.csv:**
+**2. clinvar_BRCA_variant_summary.csv:**
 
 | Coluna                                           | O que é / para que serve                                                                                                                                                                                       | Exemplo (Allele ID 24356)                                   |
 |--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
@@ -48,3 +48,11 @@ Todos os datasets utilizados foram filtrados apenas por genes BRCA1 e/ou 2. Excl
 | **SCVsForAggregateGermlineClassification**       | Lista de SCV IDs usados para o consenso germline.                                                                                                                                                              | `SCV000759183 | SCV002668132`                              |
 | **SCVsForAggregateSomaticClinicalImpact**        | SCVs para impacto somático.                                                                                                                                                                                   | `-`                                                         |
 | **SCVsForAggregateOncogenicityClassification**   | SCVs para oncogenicidade.                                                                                                                                                                                     | `-`                                                         |
+
+
+## Próximos passos:
+
+Para o treinamento, pegar apenas os dados mais relevantes, por exemplo, na segunda base de dados:
+
+- Utilizar ClinicalSignificance ou ClinSigSimple como rótulo.
+- Start, Stop, ReferenceAlleleVCF, AlternateAlleleVCF, ReviewStatus / NumberSubmitters e demais campos como pesos de confiança.
